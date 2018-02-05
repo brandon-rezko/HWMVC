@@ -3,20 +3,185 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="Test">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="MVC Calc">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="9"/>
     <property name="source" value="9"/>
-    <path id="Test.classpath">
+    <path id="JUnit 5.libraryclasspath">
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="MVC Calc.classpath">
+        <path refid="JUnit 5.libraryclasspath"/>
         <pathelement location="bin"/>
     </path>
+    <path id="run.(default package).classpath">
+        <path refid="MVC Calc.classpath"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="run.Add.classpath">
+        <path refid="MVC Calc.classpath"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="run.DivByZero.classpath">
+        <path refid="MVC Calc.classpath"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
     <path id="run.HWMVC.classpath">
-        <path refid="Test.classpath"/>
+        <path refid="MVC Calc.classpath"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
     <path id="run.main.classpath">
-        <path refid="Test.classpath"/>
+        <path refid="MVC Calc.classpath"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="run.MinusNumberSquareRoot.classpath">
+        <path refid="MVC Calc.classpath"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="run.Mod.classpath">
+        <path refid="MVC Calc.classpath"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="run.Multi.classpath">
+        <path refid="MVC Calc.classpath"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="run.MVC Calc.classpath">
+        <path refid="MVC Calc.classpath"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.api_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.engine_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.migrationsupport_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.jupiter.params_5.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.commons_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.engine_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.launcher_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.runner_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.platform.suite.api_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit.vintage.engine_4.12.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.opentest4j_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.apiguardian_1.0.0.v20170910-2246.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -36,7 +201,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="Test.classpath"/>
+            <classpath refid="MVC Calc.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -53,14 +218,87 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
+    <target name="(default package)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="DivByZero" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.(default package).classpath"/>
+        </junit>
+    </target>
+    <target name="Add">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="Add" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.Add.classpath"/>
+        </junit>
+    </target>
+    <target name="DivByZero">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="DivByZero" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.DivByZero.classpath"/>
+        </junit>
+    </target>
     <target name="HWMVC">
         <java classname="HWMVC" failonerror="true" fork="yes">
+            <jvmarg line="-ea"/>
             <classpath refid="run.HWMVC.classpath"/>
         </java>
     </target>
     <target name="main">
         <java classname="main" failonerror="true" fork="yes">
+            <jvmarg line="-ea"/>
             <classpath refid="run.main.classpath"/>
         </java>
+    </target>
+    <target name="MinusNumberSquareRoot">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="MinusNumberSquareRoot" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.MinusNumberSquareRoot.classpath"/>
+        </junit>
+    </target>
+    <target name="Mod">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="Mod" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.Mod.classpath"/>
+        </junit>
+    </target>
+    <target name="Multi">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="Multi" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.Multi.classpath"/>
+        </junit>
+    </target>
+    <target name="MVC Calc">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="DivByZero" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.MVC Calc.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
     </target>
 </project>
