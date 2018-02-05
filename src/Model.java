@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class Model {
 private long result;
@@ -20,11 +21,21 @@ public void multi(long firstnumber, long secondnumber) {
 }
 
 public void div(long firstnumber, long secondnumber) {
-	result = firstnumber/secondnumber;
+	
+	if(secondnumber==0) {
+		JOptionPane.showMessageDialog(null, "You cannot divide a number by 0.");
+		result = 0;
+	}
+	else result = firstnumber/secondnumber;
+	
 }
 
 public void sqrrt(long firstnumber) {
-	result1 = Math.sqrt(firstnumber);
+	if(firstnumber<0) {
+		JOptionPane.showMessageDialog(null, "Invalid input number.");
+	result1=0;
+	}
+	else result1 = Math.sqrt(firstnumber);
 }
 
 public long returnresult() {
