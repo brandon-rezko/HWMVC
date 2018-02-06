@@ -1,6 +1,6 @@
 <project default="compile">
-<property name ="src.java.dir" location="./target"/>
-<property name ="result.javaclasses.dir location="${result.dir}/classes"/>
+<property name="src.java.dir" location="./src"/>
+<property name="result.javaclasses.dir" location="${result.dir}/classes"/>
 
 <pathid="NecessaryLibraries">
 <pathelement location="./MyLibraries/junit.jar"/>
@@ -12,7 +12,7 @@ location="./MyLibraries/selenium-server-standalone-3.8.1.jar"/>-->
 
 <target name="compile">
 <mkdir dir="${result.javaclasses.dir}"/>
-<javac srcdir="${src.java.dir}" destdir="${result.javaclasses.dir}" debug="true" uncludeantruntime="false">
+<javac srcdir="${src.java.dir}" destdir="${result.javaclasses.dir}" debug="true" includeantruntime="false">
 <classpath>
 <path refid="NeccessaryLibraries">
 <pathelement location="${result.javaclasses.dir}"/>
