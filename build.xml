@@ -1,7 +1,7 @@
 <project default="compile">
 <property name="src.java.dir" location="./src"/>
   <property name="result.dir" location="."/>
-<property name="result.javaclasses.dir" location="${result.dir}/bin"/>
+<property name="result.javaclasses.dir" location="${result.dir}/classes"/>
 
 <path id="NecessaryLibraries">
 <pathelement location="./MyLibraries/junit.jar"/>
