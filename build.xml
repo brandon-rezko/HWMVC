@@ -1,6 +1,6 @@
 <project default="compile">
 <property name="src.java.dir" location="./src"/>
-  <property name="result.dir" location="."/>
+  <property name="result.dir" location="./"/>
 <property name="result.javaclasses.dir" location="${result.dir}/bin"/>
 
 <path id="NecessaryLibraries">
