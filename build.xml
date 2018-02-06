@@ -1,6 +1,7 @@
 <project default="compile">
 <property name="src.java.dir" location="./src"/>
-<property name="result.javaclasses.dir" location="${result.dir}/classes"/>
+  <property name="result.dir" location="."/>
+<property name="result.javaclasses.dir" location="${result.dir}/bin"/>
 
 <path id="NecessaryLibraries">
 <pathelement location="./MyLibraries/junit.jar"/>
@@ -26,6 +27,7 @@
 <junit haltonfailure="true" fork="true">
 <classpath>
 <path refid="NecessaryLibraries"></path>
+  <pathelement location="${result.javaclasses.dir}"/>
 </classpath>
 <formatter type="brief" usefile="false"/>
 <batchtest>
@@ -36,3 +38,4 @@
 </junit>
 </target>
 </project>
+
