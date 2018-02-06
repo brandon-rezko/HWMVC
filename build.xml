@@ -26,7 +26,6 @@
 <junit haltonfailure="true" fork="true">
 <classpath>
 <path refid="NecessaryLibraries"></path>
-<pathelement location="${result.javaclasses.dir}"/>
 </classpath>
 <formatter type="brief" usefile="false"/>
 <batchtest>
