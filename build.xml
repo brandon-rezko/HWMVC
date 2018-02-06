@@ -23,7 +23,7 @@
 <!--fork : each test will run in its own JVM (to seperate test cases)-->
 <junit printssummary="true" haltonfailure="true" fork="true>
 <classpath>
-<path refid="NeccessaryLibraries"></path>
+<path refid="NecessaryLibraries"></path>
 <pathelement location="${result.javaclasses.dir}"/>
 </classpath>
 <formatter type="brief" usefile="false"/>
