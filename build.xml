@@ -4,7 +4,7 @@
 <property name="result.javaclasses.dir" location="${result.dir}/bin"/>
 
 <path id="NecessaryLibraries">
-<pathelement location="./MyLibraries/junit-4.10.jar"/>
+<pathelement location="./MyLibraries/junit.jar"/>
 <!--matcher-->
 <pathelement location="./MyLibraries/org.hamcrest.core_1.3.0.v201303031735.jar"/>
 <!--<pathelement location="./MyLibraries/selenium-server-standalone-3.8.1.jar"/>-->
