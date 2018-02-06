@@ -6,8 +6,7 @@
 <pathelement location="./MyLibraries/junit.jar"/>
 <!--matcher-->
 <pathelement location="./MyLibraries/hamcrest-core-1.3.jar"/>
-<!--<pathelement
-location="./MyLibraries/selenium-server-standalone-3.8.1.jar"/>-->
+<!--<pathelement location="./MyLibraries/selenium-server-standalone-3.8.1.jar"/>-->
 </path>
 
 <target name="compile">
