@@ -23,7 +23,8 @@ public void multi(long firstnumber, long secondnumber) {
 public void div(long firstnumber, long secondnumber) {
 	
 	if(secondnumber==0) {
-		JOptionPane.showMessageDialog(null, "You cannot divide a number by 0.");
+		
+		System.out.println("You cannot divide a number by 0.");
 		result = 0;
 	}
 	else result = firstnumber/secondnumber;
@@ -32,7 +33,7 @@ public void div(long firstnumber, long secondnumber) {
 
 public void sqrrt(long firstnumber) {
 	if(firstnumber<0) {
-		JOptionPane.showMessageDialog(null, "Invalid input number.");
+		System.out.println("Invalid input number.");
 	result1=0;
 	}
 	else result1 = Math.sqrt(firstnumber);
