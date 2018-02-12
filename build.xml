@@ -36,6 +36,7 @@
 <include name="Multi.class"/>
 <include name="Mod.class"/>
 <include name="MinusNumberSquareRoot.class"/>
+  <include name="DivByZero.class"/>
 
 <include name="Add.class"/>
 </fileset>
