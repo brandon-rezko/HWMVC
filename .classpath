@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<!-- ✅ Java Runtime Environment -->
+	<!-- ✅ Java SDK -->
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-9">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
 
-	<!-- ✅ JUnit 4 Support -->
+	<!-- ✅ JUnit 4 Test Framework -->
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 
-	<!-- ✅ Project Source -->
+	<!-- ✅ Source & Output -->
 	<classpathentry kind="src" path="src"/>
-
-	<!-- ✅ Output Directory -->
 	<classpathentry kind="output" path="bin"/>
 
-	<!-- ✅ Selenium WebDriver -->
+	<!-- ✅ Web UI Automation -->
 	<classpathentry kind="lib" path="lib/selenium-server-standalone.jar"/>
+	<classpathentry kind="lib" path="lib/webdrivermanager-5.3.2.jar"/>
 
-	<!-- ✅ Apache Commons IO -->
+	<!-- ✅ IO + Logging -->
 	<classpathentry kind="lib" path="lib/commons-io-2.11.0.jar"/>
-
-	<!-- ✅ SLF4J API (for logging abstraction) -->
 	<classpathentry kind="lib" path="lib/slf4j-api-1.7.36.jar"/>
-
-	<!-- ✅ Logback Classic (implementation of SLF4J) -->
 	<classpathentry kind="lib" path="lib/logback-classic-1.2.11.jar"/>
 	<classpathentry kind="lib" path="lib/logback-core-1.2.11.jar"/>
 
-	<!-- ✅ Optional: JUnit 5 (Jupiter) Support -->
+	<!-- ✅ JSON Processing (API, config) -->
+	<classpathentry kind="lib" path="lib/jackson-core-2.13.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-databind-2.13.1.jar"/>
+
+	<!-- ✅ HTTP Client (REST API Testing) -->
+	<classpathentry kind="lib" path="lib/httpclient-4.5.13.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.4.13.jar"/>
+
+	<!-- ✅ Optional: JUnit 5 (future-proofing) -->
 	<classpathentry kind="lib" path="lib/junit-jupiter-api-5.8.2.jar"/>
 	<classpathentry kind="lib" path="lib/junit-platform-console-standalone-1.8.2.jar"/>
 </classpath>
