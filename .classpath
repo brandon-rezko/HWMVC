@@ -1,23 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<!-- ✅ Java Runtime Environment -->
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-9">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
 
-	<!-- ✅ JUnit 4 test framework -->
+	<!-- ✅ JUnit 4 Support -->
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 
-	<!-- ✅ Project source -->
+	<!-- ✅ Project Source -->
 	<classpathentry kind="src" path="src"/>
 
-	<!-- ✅ Output directory -->
+	<!-- ✅ Output Directory -->
 	<classpathentry kind="output" path="bin"/>
 
-	<!-- ✅ Selenium JAR file -->
+	<!-- ✅ Selenium WebDriver -->
 	<classpathentry kind="lib" path="lib/selenium-server-standalone.jar"/>
 
-	<!-- ✅ Apache Commons IO (for screenshots, logs, etc.) -->
+	<!-- ✅ Apache Commons IO -->
 	<classpathentry kind="lib" path="lib/commons-io-2.11.0.jar"/>
+
+	<!-- ✅ SLF4J API (for logging abstraction) -->
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.36.jar"/>
+
+	<!-- ✅ Logback Classic (implementation of SLF4J) -->
+	<classpathentry kind="lib" path="lib/logback-classic-1.2.11.jar"/>
+	<classpathentry kind="lib" path="lib/logback-core-1.2.11.jar"/>
+
+	<!-- ✅ Optional: JUnit 5 (Jupiter) Support -->
+	<classpathentry kind="lib" path="lib/junit-jupiter-api-5.8.2.jar"/>
+	<classpathentry kind="lib" path="lib/junit-platform-console-standalone-1.8.2.jar"/>
 </classpath>
