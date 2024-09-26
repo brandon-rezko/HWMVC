@@ -5,7 +5,19 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+
+	<!-- ✅ JUnit 4 test framework -->
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+
+	<!-- ✅ Project source -->
 	<classpathentry kind="src" path="src"/>
+
+	<!-- ✅ Output directory -->
 	<classpathentry kind="output" path="bin"/>
+
+	<!-- ✅ Selenium JAR file -->
+	<classpathentry kind="lib" path="lib/selenium-server-standalone.jar"/>
+
+	<!-- ✅ Apache Commons IO (for screenshots, logs, etc.) -->
+	<classpathentry kind="lib" path="lib/commons-io-2.11.0.jar"/>
 </classpath>
