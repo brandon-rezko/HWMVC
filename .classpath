@@ -29,6 +29,7 @@
 
 	<!-- ✅ File & Data Handling -->
 	<classpathentry kind="lib" path="lib/commons-io-2.11.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.12.0.jar"/>
 	<classpathentry kind="lib" path="lib/opencsv-5.5.2.jar"/>
 
 	<!-- ✅ JSON & HTTP -->
@@ -36,6 +37,7 @@
 	<classpathentry kind="lib" path="lib/jackson-databind-2.13.1.jar"/>
 	<classpathentry kind="lib" path="lib/httpclient-4.5.13.jar"/>
 	<classpathentry kind="lib" path="lib/httpcore-4.4.13.jar"/>
+	<classpathentry kind="lib" path="lib/rest-assured-5.3.0.jar"/>
 
 	<!-- ✅ Excel Support -->
 	<classpathentry kind="lib" path="lib/poi-5.2.2.jar"/>
@@ -44,9 +46,13 @@
 	<classpathentry kind="lib" path="lib/commons-collections4-4.4.jar"/>
 	<classpathentry kind="lib" path="lib/xmlbeans-5.1.1.jar"/>
 
-	<!-- ✅ HTML Reporting -->
+	<!-- ✅ Reporting -->
 	<classpathentry kind="lib" path="lib/extentreports-5.0.9.jar"/>
 	<classpathentry kind="lib" path="lib/gson-2.8.9.jar"/>
 	<classpathentry kind="lib" path="lib/allure-java-commons-2.17.3.jar"/>
 	<classpathentry kind="lib" path="lib/allure-testng-2.17.3.jar"/>
+
+	<!-- ✅ Mocking / Utility Tools -->
+	<classpathentry kind="lib" path="lib/mockito-core-4.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/lombok-1.18.24.jar"/>
 </classpath>
