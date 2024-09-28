@@ -1,36 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>MVC Calc</name>
-	<comment>Java MVC Calculator with Eclipse support for JDT, JUnit, Maven, Spring, Git, and Web tools</comment>
+	<comment>
+	MVC-based Java Calculator project.
+	Includes support for: Java, JUnit, Maven, Web Tools, Spring, Git, Annotation Processing, and Remote Collaboration.
+	</comment>
 
-	<!-- ✅ Optional: Future linked projects (modular structure) -->
 	<projects>
+		<!-- ✅ Potential future modules -->
 		<!-- <project>CalculatorCore</project> -->
-		<!-- <project>CommonUtils</project> -->
+		<!-- <project>SharedUtils</project> -->
 	</projects>
 
 	<buildSpec>
-		<!-- ✅ Java compiler -->
+		<!-- ✅ Java Compiler -->
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments/>
 		</buildCommand>
 
-		<!-- ✅ JUnit test runner -->
+		<!-- ✅ JUnit Test Runner -->
 		<buildCommand>
 			<name>org.eclipse.jdt.junit.JUnitBuilder</name>
 			<arguments/>
 		</buildCommand>
 
-		<!-- ✅ Maven builder -->
+		<!-- ✅ Maven Build Support -->
 		<buildCommand>
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments/>
 		</buildCommand>
 
-		<!-- ✅ Web project builder -->
+		<!-- ✅ Web Project Facets -->
 		<buildCommand>
 			<name>org.eclipse.wst.common.project.facet.core.builder</name>
+			<arguments/>
+		</buildCommand>
+
+		<!-- ✅ Task Tags Builder (for TODOs, FIXMEs) -->
+		<buildCommand>
+			<name>org.eclipse.ui.externaltools.ExternalToolBuilder</name>
 			<arguments/>
 		</buildCommand>
 	</buildSpec>
@@ -42,13 +51,19 @@
 		<!-- ✅ Maven -->
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 
-		<!-- ✅ Web tools -->
+		<!-- ✅ Web Tools -->
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 
-		<!-- ✅ Spring support -->
+		<!-- ✅ Spring Support -->
 		<nature>org.eclipse.spring.ide.nature.simple</nature>
 
-		<!-- ✅ Git support -->
+		<!-- ✅ Git Integration -->
 		<nature>org.eclipse.egit.core.GitNature</nature>
+
+		<!-- ✅ Annotation Processing (for Lombok, Spring Boot) -->
+		<nature>org.eclipse.jdt.apt.core.aptNature</nature>
+
+		<!-- ✅ Remote Systems Support (for SFTP, SSH projects) -->
+		<nature>org.eclipse.rse.ui.remoteSystemsNature</nature>
 	</natures>
 </projectDescription>
