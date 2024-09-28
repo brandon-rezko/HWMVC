@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>MVC Calc</name>
-	<comment></comment>
+	<comment>Basic Java MVC Calculator with Eclipse JDT and JUnit support</comment>
 	<projects>
 	</projects>
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
-			<arguments>
-			</arguments>
+			<arguments/>
+		</buildCommand>
+		<!-- ✅ JUnit builder for test execution -->
+		<buildCommand>
+			<name>org.eclipse.jdt.junit.JUnitBuilder</name>
+			<arguments/>
 		</buildCommand>
 	</buildSpec>
 	<natures>
