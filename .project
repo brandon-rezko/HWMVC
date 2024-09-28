@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>MVC Calc</name>
-	<comment>Java MVC Calculator with Eclipse JDT, JUnit, Maven, and web support</comment>
+	<comment>Java MVC Calculator with Eclipse support for JDT, JUnit, Maven, Spring, Git, and Web tools</comment>
+
+	<!-- ✅ Optional: Future linked projects (modular structure) -->
 	<projects>
+		<!-- <project>CalculatorCore</project> -->
+		<!-- <project>CommonUtils</project> -->
 	</projects>
+
 	<buildSpec>
-		<!-- ✅ Java compiler builder -->
+		<!-- ✅ Java compiler -->
 		<buildCommand>
 			<name>org.eclipse.jdt.core.javabuilder</name>
 			<arguments/>
@@ -17,13 +22,13 @@
 			<arguments/>
 		</buildCommand>
 
-		<!-- ✅ Maven build support -->
+		<!-- ✅ Maven builder -->
 		<buildCommand>
 			<name>org.eclipse.m2e.core.maven2Builder</name>
 			<arguments/>
 		</buildCommand>
 
-		<!-- ✅ Web facets builder (future web support) -->
+		<!-- ✅ Web project builder -->
 		<buildCommand>
 			<name>org.eclipse.wst.common.project.facet.core.builder</name>
 			<arguments/>
@@ -31,13 +36,19 @@
 	</buildSpec>
 
 	<natures>
-		<!-- ✅ Java project -->
+		<!-- ✅ Java -->
 		<nature>org.eclipse.jdt.core.javanature</nature>
 
-		<!-- ✅ Maven project -->
+		<!-- ✅ Maven -->
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 
-		<!-- ✅ Web tools support -->
+		<!-- ✅ Web tools -->
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+
+		<!-- ✅ Spring support -->
+		<nature>org.eclipse.spring.ide.nature.simple</nature>
+
+		<!-- ✅ Git support -->
+		<nature>org.eclipse.egit.core.GitNature</nature>
 	</natures>
 </projectDescription>
