@@ -41,6 +41,10 @@ public void setResult(Long Result) {
 public void setResult1(Double result) {
 	textField_2.setText(Double.toString(result));
 }
+
+public void showError(String message) {
+    JOptionPane.showMessageDialog(null, message, "Input Error", JOptionPane.ERROR_MESSAGE);
+}
 JButton btnNewButton_1;
 JButton btnNewButton ;
 JButton btnNewButton_2 ;
