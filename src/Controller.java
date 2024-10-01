@@ -1,74 +1,96 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 /**
- * Controller class that handles button events and connects the View (HWMVC) with the Model logic.
+ * Controller class for the MVC Calculator using an enum-based action dispatcher.
  */
 public class Controller {
-    private HWMVC view;
-    private Model model;
+    private final HWMVC view;
+    private final Model model;
 
-    public Controller(HWMVC view1, Model model1) {
-        this.view = view1;
-        this.model = model1;
+    public Controller(HWMVC view, Model model) {
+        this.view = view;
+        this.model = model;
 
-        attachListener(() -> model.sub(view.getFirst(), view.getSecond()), view::addListeners1);
-        attachListener(() -> model.mod(view.getFirst(), view.getSecond()), view::addListeners2);
-        attachListener(() -> model.multi(view.getFirst(), view.getSecond()), view::addListeners3);
+        // ✅ Map buttons to operations
+        register(Operation.SUBTRACT, view::addListeners1);
+        register(Operation.MODULO, view::addListeners2);
+        register(Operation.MULTIPLY, view::addListeners3);
+        register(Operation.DIVIDE, view::addListeners4);
+        register(Operation.ADD, view::addListeners5);
+        registerUnary(Operation.SQRT, view::addListeners6);
+    }
 
-        // ✅ Division with zero check
-        view.addListeners4(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    long a = view.getFirst();
-                    long b = view.getSecond();
-                    if (b == 0) {
-                        view.showError("Division by zero is not allowed.");
-                        return;
-                    }
-                    model.div(a, b);
-                    view.setResult(model.returnresult());
-                } catch (NumberFormatException ex) {
-                    view.showError("Invalid input: please enter numeric values.");
+    /**
+     * Register a binary operation (uses two inputs).
+     */
+    private void register(Operation op, Consumer<ActionListener> bind) {
+        bind.accept(e -> {
+            try {
+                long a = view.getFirst();
+                long b = view.getSecond();
+
+                if (op == Operation.DIVIDE && b == 0) {
+                    view.showError("Division by zero is not allowed.");
+                    return;
                 }
-            }
-        });
 
-        attachListener(() -> model.add(view.getFirst(), view.getSecond()), view::addListeners5);
+                op.apply(model, a, b);
+                view.setResult(model.returnresult());
 
-        // ✅ Square root validation
-        view.addListeners6(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    long a = view.getFirst();
-                    if (a < 0) {
-                        view.showError("Cannot compute square root of a negative number.");
-                        return;
-                    }
-                    model.sqrrt(a);
-                    view.setResult1(model.returnresult1());
-                } catch (NumberFormatException ex) {
-                    view.showError("Invalid input: please enter a number.");
-                }
+            } catch (NumberFormatException ex) {
+                view.showError("Please enter valid numbers.");
+            } catch (Exception ex) {
+                view.showError("Unexpected error: " + ex.getMessage());
             }
         });
     }
 
     /**
-     * Generic method to attach an action to a view listener with basic exception handling.
+     * Register a unary operation (uses one input only).
      */
-    private void attachListener(Runnable modelAction, java.util.function.Consumer<ActionListener> addListenerFunc) {
-        addListenerFunc.accept(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                try {
-                    modelAction.run();
-                    view.setResult(model.returnresult());
-                } catch (NumberFormatException ex) {
-                    view.showError("Invalid input: please enter valid numbers.");
-                } catch (Exception ex) {
-                    view.showError("An error occurred: " + ex.getMessage());
+    private void registerUnary(Operation op, Consumer<ActionListener> bind) {
+        bind.accept(e -> {
+            try {
+                long a = view.getFirst();
+
+                if (op == Operation.SQRT && a < 0) {
+                    view.showError("Square root of negative number is not allowed.");
+                    return;
                 }
+
+                op.apply(model, a, 0); // b is ignored for unary ops
+                view.setResult1(model.returnresult1());
+
+            } catch (NumberFormatException ex) {
+                view.showError("Please enter a valid number.");
+            } catch (Exception ex) {
+                view.showError("Unexpected error: " + ex.getMessage());
             }
         });
+    }
+
+    /**
+     * Operation types with associated behavior.
+     */
+    private enum Operation {
+        ADD((m, a, b) -> m.add(a, b)),
+        SUBTRACT((m, a, b) -> m.sub(a, b)),
+        MULTIPLY((m, a, b) -> m.multi(a, b)),
+        DIVIDE((m, a, b) -> m.div(a, b)),
+        MODULO((m, a, b) -> m.mod(a, b)),
+        SQRT((m, a, b) -> m.sqrrt(a)); // b is ignored
+
+        private final BiConsumer<Model, Long, Long> logic;
+
+        Operation(BiConsumer<Model, Long, Long> logic) {
+            this.logic = logic;
+        }
+
+        public void apply(Model m, long a, long b) {
+            logic.accept(m, a, b);
+        }
     }
 }
