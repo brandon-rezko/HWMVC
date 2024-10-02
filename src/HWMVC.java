@@ -45,6 +45,9 @@ public void setResult1(Double result) {
 public void showError(String message) {
     JOptionPane.showMessageDialog(null, message, "Input Error", JOptionPane.ERROR_MESSAGE);
 }
+public JFrame getMainFrame() {
+    return this; // or the frame reference if you’re extending JPanel
+}
 JButton btnNewButton_1;
 JButton btnNewButton ;
 JButton btnNewButton_2 ;
