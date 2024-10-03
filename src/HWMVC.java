@@ -48,6 +48,18 @@ public void showError(String message) {
 public JFrame getMainFrame() {
     return this; // or the frame reference if you’re extending JPanel
 }
+public void appendHistory(String line) {
+    historyTextArea.append(line + "\n"); // Add a JTextArea named historyTextArea
+}
+
+public void showMessage(String msg) {
+    JOptionPane.showMessageDialog(null, msg, "Info", JOptionPane.INFORMATION_MESSAGE);
+}
+public void addListeners7(ActionListener a) {
+    exportButton.addActionListener(a); // Add a JButton named exportButton
+}
+
+
 JButton btnNewButton_1;
 JButton btnNewButton ;
 JButton btnNewButton_2 ;
