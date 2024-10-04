@@ -58,6 +58,17 @@ public void showMessage(String msg) {
 public void addListeners7(ActionListener a) {
     exportButton.addActionListener(a); // Add a JButton named exportButton
 }
+public void clearHistory() {
+    historyTextArea.setText(""); // assuming JTextArea
+}
+
+public int confirm(String message) {
+    return JOptionPane.showConfirmDialog(null, message, "Confirm", JOptionPane.YES_NO_OPTION);
+}
+
+public void addListeners8(ActionListener a) {
+    clearButton.addActionListener(a); // connect to JButton clearButton
+}
 
 
 JButton btnNewButton_1;
