@@ -69,6 +69,34 @@ public int confirm(String message) {
 public void addListeners8(ActionListener a) {
     clearButton.addActionListener(a); // connect to JButton clearButton
 }
+public void setHistoryFilterListener(ItemListener listener) {
+    historyFilterDropdown.addItemListener(listener); // JComboBox with items: "ALL", "ADD", "SUBTRACT", etc.
+}
+
+public void showFilteredHistory(List<String> entries) {
+    historyTextArea.setText("");
+    for (String line : entries) {
+        historyTextArea.append(line + "\n");
+    }
+}
+
+// Optionally: colored history (you can use HTML in JTextPane or styled JTextArea)
+public void appendHistoryStyled(String entry, String op) {
+    String color = switch (op.toUpperCase()) {
+        case "ADD" -> "blue";
+        case "SUBTRACT" -> "orange";
+        case "MULTIPLY" -> "green";
+        case "DIVIDE" -> "red";
+        case "MODULO" -> "purple";
+        case "SQRT" -> "brown";
+        default -> "black";
+    };
+
+    // Example for JTextPane using HTML content
+    historyPane.setContentType("text/html");
+    String current = historyPane.getText().replace("</body></html>", "");
+    historyPane.setText(current + "<p style='color:" + color + ";'>" + entry + "</p></body></html>");
+}
 
 
 JButton btnNewButton_1;
