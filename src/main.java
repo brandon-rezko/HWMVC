@@ -3,7 +3,8 @@ import java.util.Date;
 import java.util.Properties;
 import javax.swing.UIManager;
 import javax.sound.sampled.*;
-
+import java.nio.file.*;
+import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 
@@ -48,6 +49,18 @@ public class main {
             System.out.println("⚠️ Theme not applied: " + e.getMessage());
         }
     }
+	private static JSONObject loadSettings(String filename) {
+    try {
+        String content = Files.readString(Paths.get(filename));
+        return new JSONObject(content);
+    } catch (IOException e) {
+        System.out.println("⚠️ No settings file found. Using defaults.");
+        return new JSONObject(); // empty fallback
+    } catch (Exception e) {
+        System.out.println("⚠️ Failed to load settings: " + e.getMessage());
+        return new JSONObject();
+    }
+}
 
     private static void playStartupSound(String filePath) {
         try {
